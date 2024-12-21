@@ -1,6 +1,6 @@
-    <footer class="footer mt-auto py-3 bg-secondary">
+    <footer class="footer mt-auto py-3 mt-4 bg-body-tertiary">
         <div class="container">
-            <span class="text-muted">Ваш футер содержимое здесь.</span>
+            <span class="text-muted">Грицев Иван МКП 2024-2025</span>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
