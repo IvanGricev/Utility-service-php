@@ -1,7 +1,7 @@
 <?php
 
 $host = 'localhost';
-$dbname = 'Beluslugi';
+$dbname = 'utility_service';
 $username = 'root';
 $password = '';
 
@@ -11,4 +11,7 @@ try {
 } catch (PDOException $e) {
     die("Database connection failed: " . $e->getMessage());
 }
+
+session_start();
+
 ?>

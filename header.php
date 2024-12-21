@@ -1,3 +1,5 @@
+<?php require 'config.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,15 +21,30 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                         <ul class="navbar-nav">
-                            <li class="nav-item dropdown">
-                            <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                Пользователь
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-dark">
-                                <li><a class="dropdown-item" href="#">Регистрация</a></li>
-                                <li><a class="dropdown-item" href="#">Авторизация</a></li>
-                            </ul>
-                            </li>
+                            <?php if (isset($_SESSION['username'])): ?>
+                                <li class="nav-item dropdown">
+                                    <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <?php echo $_SESSION['username']; ?>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-dark">
+                                        <li><a class="dropdown-item" href="#">Личный кабинет</a></li>
+                                        <?php if ($_SESSION['role'] == 'admin'): ?>
+                                            <li><a class="dropdown-item" href="#">Админ панель</a></li>
+                                        <?php endif; ?>
+                                        <li><a class="dropdown-item" href="auth.php?logout=true">Выход</a></li>
+                                    </ul>
+                                </li>
+                            <?php else: ?>
+                                <li class="nav-item dropdown">
+                                    <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Пользователь
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-dark">
+                                        <li><a class="dropdown-item" href="register.php">Регистрация</a></li>
+                                        <li><a class="dropdown-item" href="login.php">Авторизация</a></li>
+                                    </ul>
+                                </li>
+                            <?php endif; ?>
                         </ul>
                     </div>
                 </div>
