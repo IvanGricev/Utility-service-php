@@ -1,1 +1,17 @@
-/*# sourceMappingURL=styles.css.map */
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.footer {
+  background-color: #f1f1f1;
+  padding: 1rem 0;
+}/*# sourceMappingURL=styles.css.map */
