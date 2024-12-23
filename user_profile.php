@@ -1,6 +1,6 @@
 <?php include("header.php"); ?>
 
-<main class="main-content pt-3">
+<main class="main-content py-3">
     <div class="container">
         <div class="row">
             <div class="col-md-8">
