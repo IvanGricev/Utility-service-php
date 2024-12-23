@@ -32,7 +32,7 @@
                                     <ul class="dropdown-menu dropdown-menu-dark">
                                         <li><a class="dropdown-item" href="user_profile.php">Личный кабинет</a></li>
                                         <?php if ($_SESSION['role'] == 'admin'): ?>
-                                            <li><a class="dropdown-item" href="#">Админ панель</a></li>
+                                            <li><a class="dropdown-item" href="admin_panel.php">Админ панель</a></li>
                                         <?php endif; ?>
                                         <li><a class="dropdown-item" href="auth.php?logout=true">Выход</a></li>
                                     </ul>

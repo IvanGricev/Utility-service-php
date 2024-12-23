@@ -43,6 +43,7 @@ if (isset($_POST['register'])) {
     $stmt->execute(['username' => $username, 'password' => $passwordHash, 'email' => $email]);
 
     // Автоматическая авторизация
+    $_SESSION['user_id'] = $pdo->lastInsertId();
     $_SESSION['username'] = $username;
     $_SESSION['email'] = $email;
     $_SESSION['role'] = 'user';
@@ -60,6 +61,7 @@ if (isset($_POST['login'])) {
     $stmt->execute(['email' => $email]);
     $user = $stmt->fetch();
     if ($user && password_verify($password, $user['password_hash'])) {
+        $_SESSION['user_id'] = $user['user_id'];
         $_SESSION['username'] = $user['username'];
         $_SESSION['email'] = $user['email'];
         $_SESSION['role'] = $user['role'];
